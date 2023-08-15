@@ -6,7 +6,7 @@ export const styles = StyleSheet.create({
     backgroundColor: "#FFF"
   },
   description: {
-    color: "#2E9D4C",
+    color: "#FF66C4",
     fontFamily: "Poppins_400Regular",
     textAlign: "center",
     fontSize: 14,
@@ -18,7 +18,7 @@ export const styles = StyleSheet.create({
   },
   bottom: {
     flex: 1,
-    backgroundColor: "#D9D9D9",
+    backgroundColor: "#ECC9DE",
     borderTopLeftRadius: 32,
     borderTopRightRadius: 32,
     paddingHorizontal: 24,

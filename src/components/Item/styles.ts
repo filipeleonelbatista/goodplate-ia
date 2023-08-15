@@ -18,7 +18,7 @@ export const styles = StyleSheet.create({
   percentage: {
     fontFamily: "Poppins_700Bold",
     fontSize: 14,
-    backgroundColor: "#D5F2E1",
+    backgroundColor: "#FFCBEB",
     height: 42,
     width: 42,
     borderRadius: 7,
