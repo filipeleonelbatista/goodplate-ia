@@ -1,0 +1,80 @@
+{
+  "PLANO ALIMENTAR":{
+    "FOTO-PERFIL": "https://github.com/filipeleonelbatista.png",
+    "NOME": "Filipe Leonel Batista",
+    "SEXO": "Masculino",
+    "PESO": [
+      {"data": "12/02/2023", "valor": 135.45},
+      {"data": "12/03/2023", "valor": 129.45}
+    ],
+    "ALTURA": 198,
+    "CALORIAS-DIARIAS": 5000,
+    "PERCENTUAL-DE-GORDURA": [
+      {"data": "12/02/2023", "valor": 20.45},
+      {"data": "12/03/2023", "valor": 30.45}
+    ],
+    "PERCENTUAL-MASSA-MUSCULAR": [
+      {"data": "12/02/2023", "valor": 24.45},
+      {"data": "12/03/2023", "valor": 30.45}
+    ],
+    "ALARMES": "Sim",
+    "TEMPO-PARA-O-ALARME": "10 minutos antes",
+    "PLANO":{
+      "SEGUNDA-FEIRA":{
+        "CAFÉ-DA-MANHÃ": {
+          "items": [
+            {"item":"Leite", "quantidade": 250, "unidade-medida": "ml"},
+            {"item":"Creatina", "quantidade": 3, "unidade-medida": "gr"},
+            {"item":"Fatia de bolo", "quantidade": 1, "unidade-medida": "uni"}
+          ],
+          "observacao": "Leite com creatina e a fatia de bolo no maximo 20 gr.",
+          "horario": "07:30"
+        },
+        "COLAÇÃO": {
+          "items": [
+            {"item":"Fruta", "quantidade": 1, "unidade-medida": "uni"},
+            {"item":"Granola", "quantidade": 200, "unidade-medida": "gr"}
+          ],
+          "observacao": "1 Fruta com granola e cia.",
+          "horario": "10:00"
+        },
+        "ALMOÇO": {
+          "items": [
+            {"item":"Carbo", "quantidade": 200, "unidade-medida": "gr"},
+            {"item":"Feijão", "quantidade": 90, "unidade-medida": "gr"},
+            {"item":"Proteína", "quantidade": 1, "unidade-medida": "por"},
+            {"item":"Ovo", "quantidade": 1, "unidade-medida": "uni"},
+            {"item":"Saladas", "quantidade": 1, "unidade-medida": "a gosto"}
+            {"item":"Sobremesa", "quantidade": 200, "unidade-medida": "gr"}
+          ],
+          "observacao": "Carbo sugestão na tabela de substituição.",
+          "horario": "12:00"
+        },
+        "LANCHE-DA-TARDE": {
+          "items": [
+            {"item":"Chips de frutas", "quantidade": 100, "unidade-medida": "gr"}
+          ],
+          "observacao": "",
+          "horario": "15:00"
+        },
+        "LANCHE-DA-TARDE-2": {
+          "items": [
+            {"item":"Sanduiche pão integral", "quantidade": 1, "unidade-medida": "uni"},
+            {"item":"fruta", "quantidade": 1, "unidade-medida": "uni"}
+          ],
+          "observacao": "",
+          "horario": "17:30"
+        },
+        "JANTA": {
+          "items": [
+            {"item":"Ovos mexidos", "quantidade": 1, "unidade-medida": "uni"},
+            {"item":"fruta", "quantidade": 1, "unidade-medida": "uni"},
+            {"item":"Bolo", "quantidade": 1, "unidade-medida": "uni"}
+          ],
+          "observacao": "",
+          "horario": "20:30"
+        }
+      }
+    }
+  }
+}

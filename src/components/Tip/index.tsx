@@ -1,24 +1,27 @@
-import { Text, View } from 'react-native';
-import { MaterialIcons } from '@expo/vector-icons';
+import { MaterialIcons } from "@expo/vector-icons";
 
-import { styles } from './styles';
+import { HStack, Text } from "native-base";
 
 type Props = {
   message: string;
-}
+};
 
 export function Tip({ message }: Props) {
   return (
-    <View style={styles.container}>
-      <MaterialIcons
-        name="restaurant"
-        color="#FFFFFF"
-        size={24}
-      />
+    <HStack
+      w={"100%"}
+      h={12}
+      space={2}
+      borderRadius={8}
+      bgColor={"green.600"}
+      alignItems="center"
+      justifyContent="center"
+    >
+      <MaterialIcons name="restaurant" color="#FFFFFF" size={24} />
 
-      <Text style={styles.message}>
+      <Text color={"white"} fontFamily={"Poppins_400Regular"} fontSize={16}>
         {message}
       </Text>
-    </View>
+    </HStack>
   );
 }

@@ -1,15 +1,13 @@
-import { useState } from "react";
-import { Image, ScrollView, Text, View, Alert } from "react-native";
-
-import { styles } from "./styles";
-import * as ImagePicker from "expo-image-picker";
+import { MaterialIcons } from "@expo/vector-icons";
 import * as ImageManipulator from "expo-image-manipulator";
-
-import { Tip } from "../../components/Tip";
+import * as ImagePicker from "expo-image-picker";
+import { Button, Image, ScrollView, Spinner, Text, VStack } from "native-base";
+import { useState } from "react";
+import { Alert } from "react-native";
 import { Item, ItemProps } from "../../components/Item";
-import { Button } from "../../components/Button";
-import { api } from "../../services/api";
 import { Loading } from "../../components/Loading";
+import { Tip } from "../../components/Tip";
+import { api } from "../../services/api";
 import { foodContains } from "../../utils/foodContains";
 
 export function Home() {
@@ -46,7 +44,11 @@ export function Home() {
 
     const isVegetable = foodContains(foods, "beef");
 
-    setMessage(isVegetable ? "Seu prato está dentro da dieta!" : "Adicione vegetais em seu prato!");
+    setMessage(
+      isVegetable
+        ? "Seu prato está dentro da dieta!"
+        : "Adicione vegetais em seu prato!"
+    );
 
     setItems(foods);
     setIsLoading(false);
@@ -97,24 +99,59 @@ export function Home() {
   }
 
   return (
-    <View style={styles.container}>
-      <Button onPress={handleSelectImage} disabled={isLoading} />
+    <VStack flex={1} bgColor="white">
+      <Button
+        w={12}
+        h={12}
+        position={"absolute"}
+        top={12}
+        right={8}
+        zIndex={100}
+        bgColor={"green.600"}
+        _pressed={{
+          bgColor: "green.800",
+        }}
+        onPress={handleSelectImage}
+        disabled={isLoading}
+      >
+        <MaterialIcons name="add-a-photo" color="#FFF" size={24} />
+      </Button>
 
-      {selectedImageUri ? (
-        <Image
-          source={{ uri: selectedImageUri }}
-          style={styles.image}
-          resizeMode="cover"
-        />
-      ) : (
-        <Text style={styles.description}>
-          Selecione a foto do seu prato para analizar.
-        </Text>
-      )}
+      <VStack flex={1} alignItems="center" justifyContent="center">
+        {selectedImageUri ? (
+          <Image
+            source={{ uri: selectedImageUri }}
+            flex={1}
+            size={"100%"}
+            resizeMode="cover"
+            alt="foto"
+          />
+        ) : (
+          <Text
+            color={"green.600"}
+            fontFamily={"Poppins_400Regular"}
+            fontSize={14}
+            textAlign="center"
+          >
+            Selecione a foto do seu prato para analizar.
+          </Text>
+        )}
+      </VStack>
 
-      <View style={styles.bottom}>
+      <VStack
+        bgColor="green.200"
+        flex={1}
+        borderTopLeftRadius={32}
+        borderTopRightRadius={32}
+        marginTop={-8}
+        paddingTop={4}
+        px={4}
+        shadow={2}
+      >
         {isLoading ? (
-          <Loading />
+          <VStack flex={1} alignItems="center" justifyContent="center">
+            <Spinner color={"green.600"} size="lg" />
+          </VStack>
         ) : (
           <>
             {message && <Tip message={message} />}
@@ -123,15 +160,15 @@ export function Home() {
               showsVerticalScrollIndicator={false}
               contentContainerStyle={{ paddingVertical: 24 }}
             >
-              <View style={styles.items}>
+              <VStack flex={1} space={2} width={"100%"}>
                 {items.map((item) => (
                   <Item key={item.name} data={item} />
                 ))}
-              </View>
+              </VStack>
             </ScrollView>
           </>
         )}
-      </View>
-    </View>
+      </VStack>
+    </VStack>
   );
 }

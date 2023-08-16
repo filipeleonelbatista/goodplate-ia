@@ -1,11 +1,9 @@
-import { ActivityIndicator, View } from 'react-native';
-
-import { styles } from './styles';
+import { Spinner, VStack } from "native-base";
 
 export function Loading() {
   return (
-    <View style={styles.container}>
-      <ActivityIndicator color="#FF66C4" />
-    </View>
+    <VStack flex={1} alignItems="center" justifyContent="center">
+      <Spinner color={"green.600"} size="lg" />
+    </VStack>
   );
 }

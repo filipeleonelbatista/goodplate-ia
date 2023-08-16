@@ -1,27 +1,27 @@
-import { StatusBar } from 'expo-status-bar';
-import { useFonts, Poppins_400Regular, Poppins_700Bold } from '@expo-google-fonts/poppins';
+import {
+  Poppins_400Regular,
+  Poppins_700Bold,
+  useFonts
+} from "@expo-google-fonts/poppins";
+import { StatusBar } from "expo-status-bar";
 
-import { Home } from './src/screens/Home';
-import { Loading } from './src/components/Loading';
+import { Loading } from "./src/components/Loading";
+import Router from "./src/Router";
+
+import { NativeBaseProvider } from "native-base";
 
 export default function App() {
   const [fontsLoaded] = useFonts({ Poppins_400Regular, Poppins_700Bold });
 
   if (!fontsLoaded) {
-    return (
-      <Loading />
-    )
+    return <Loading />;
   }
 
   return (
-    <>
-      <StatusBar
-        style="dark"
-        backgroundColor="transparent"
-        translucent
-      />
+    <NativeBaseProvider>
+      <StatusBar style="dark" backgroundColor="transparent" translucent />
 
-      <Home />
-    </>
+      <Router />
+    </NativeBaseProvider>
   );
 }
