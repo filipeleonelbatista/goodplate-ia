@@ -1,7 +1,7 @@
 import {
   Poppins_400Regular,
   Poppins_700Bold,
-  useFonts
+  useFonts,
 } from "@expo-google-fonts/poppins";
 import { StatusBar } from "expo-status-bar";
 
@@ -14,7 +14,11 @@ export default function App() {
   const [fontsLoaded] = useFonts({ Poppins_400Regular, Poppins_700Bold });
 
   if (!fontsLoaded) {
-    return <Loading />;
+    return (
+      <NativeBaseProvider>
+        <Loading />
+      </NativeBaseProvider>
+    );
   }
 
   return (

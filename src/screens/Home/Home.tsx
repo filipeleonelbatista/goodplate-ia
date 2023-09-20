@@ -5,7 +5,6 @@ import { Button, Image, ScrollView, Spinner, Text, VStack } from "native-base";
 import { useState } from "react";
 import { Alert } from "react-native";
 import { Item, ItemProps } from "../../components/Item";
-import { Loading } from "../../components/Loading";
 import { Tip } from "../../components/Tip";
 import { api } from "../../services/api";
 import { foodContains } from "../../utils/foodContains";
